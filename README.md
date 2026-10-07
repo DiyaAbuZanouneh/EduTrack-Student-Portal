@@ -35,6 +35,6 @@ A simple, responsive student portal built with HTML, CSS, Vanilla JavaScript (ES
 
 ## Screenshots
 
-![Register](screenshots/register.png)
-![Login](screenshots/login.png)
-![Dashboard](screenshots/dashboard.png)
+![Register](screenshots/Register.png)
+![Login](screenshots/Login.png)
+![Dashboard](screenshots/Dashboard.png)
