@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the page responsive on phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - EduTrack</title>
+
+    <!-- CSS: main.css = shared styles, register.css = styles of this page -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/register.css" />
+  </head>
+  <body>
+    <!-- The white card in the middle of the page -->
+    <main class="auth-card">
+      <h4 class="logo">EduTrack</h4>
+      <h1 class="title">Create your account</h1>
+
+      <!-- General error box (e.g. server not running). Hidden until JS shows it -->
+      <p id="form-error" class="form-error" role="alert" hidden></p>
+
+      <!-- novalidate: we do the validation ourselves in JS instead of the browser popups -->
+      <form id="register-form" novalidate>
+        <!-- Each .field = label + input + a place for its error message -->
+        <div class="field">
+          <label for="fullName">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="e.g. Sara Ahmed"
+            autocomplete="name"
+          />
+          <p class="field-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+          />
+          <p class="field-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="studentId">Student ID</label>
+          <input
+            type="text"
+            id="studentId"
+            name="studentId"
+            placeholder="e.g. STU-1024"
+          />
+          <p class="field-error"></p>
+        </div>
+
+        <!-- Password with the Show/Hide button -->
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              autocomplete="new-password"
+            />
+            <button type="button" class="toggle-password">Show</button>
+          </div>
+          <p class="field-error"></p>
+        </div>
+
+        <!-- Confirm password (must match the one above) -->
+        <div class="field">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="input-wrap">
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Re-enter password"
+              autocomplete="new-password"
+            />
+            <button type="button" class="toggle-password">Show</button>
+          </div>
+          <p class="field-error"></p>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          Register
+        </button>
+      </form>
+
+      <!-- Link back to the login page -->
+      <p class="auth-switch">
+        Already have an account? <a href="login.html">Log in</a>
+      </p>
+    </main>
+
+    <!-- type="module" is required because register.js uses import/export -->
+    <script type="module" src="../js/register.js"></script>
+  </body>
+</html>

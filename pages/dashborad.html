@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the page responsive on phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - EduTrack</title>
+
+    <!-- CSS: main.css = shared styles, dashborad.css = styles of this page -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/dashborad.css" />
+  </head>
+  <body>
+    <!-- Top bar: logo on the left, Log out button on the right -->
+    <header class="site-header">
+      <h4 class="logo">EduTrack</h4>
+      <button type="button" id="logout-btn" class="btn btn-secondary">
+        Log out
+      </button>
+    </header>
+
+    <main class="dashboard">
+      <!-- JS replaces this text with "Welcome, <name>" -->
+      <h1 id="welcome" class="welcome">Welcome</h1>
+
+      <!-- Two columns: profile on the left, courses on the right (one column on mobile) -->
+      <div class="dashboard-grid">
+        <!-- ===== Profile card ===== -->
+        <section class="card profile-card">
+          <!-- View mode: shows the profile details (JS fills the empty <dd> tags) -->
+          <div id="profile-view">
+            <h2 class="card-title">Profile</h2>
+            <!-- Shown only if the profile fails to load -->
+            <p id="profile-error" class="form-error" hidden>
+              Could not load your profile.
+            </p>
+            <dl class="profile-list">
+              <div>
+                <dt>Name</dt>
+                <dd id="view-name"></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd id="view-email"></dd>
+              </div>
+              <div>
+                <dt>Student ID</dt>
+                <dd id="view-student-id"></dd>
+              </div>
+            </dl>
+            <button type="button" id="edit-btn" class="btn btn-secondary">
+              Edit profile
+            </button>
+          </div>
+
+          <!-- Edit mode: hidden until the user clicks "Edit profile" -->
+          <form id="profile-form" novalidate hidden>
+            <h2 class="card-title">Edit profile</h2>
+            <!-- General error box (e.g. saving failed) -->
+            <p id="form-error" class="form-error" role="alert" hidden></p>
+
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" />
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" />
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label for="studentId">Student ID</label>
+              <input type="text" id="studentId" name="studentId" />
+              <p class="field-error"></p>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                Save changes
+              </button>
+              <button type="button" id="cancel-btn" class="btn btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ===== Enrolled courses card ===== -->
+        <section class="card courses-card">
+          <h2 class="card-title">Enrolled Courses</h2>
+          <!-- Shown only if the courses fail to load -->
+          <p id="courses-error" class="form-error" hidden>
+            Could not load your courses.
+          </p>
+
+          <!-- Desktop version: a table (rows are added by JS into #courses-body) -->
+          <table class="courses-table">
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>Teacher</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody id="courses-body"></tbody>
+          </table>
+
+          <!-- Mobile version: cards (added by JS). The CSS shows only one of the two versions -->
+          <div id="courses-cards" class="courses-cards"></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- type="module" is required because dashboard.js uses import/export -->
+    <script type="module" src="../js/dashboard.js"></script>
+  </body>
+</html>

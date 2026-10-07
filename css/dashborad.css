@@ -1,0 +1,151 @@
+/*
+  dashborad.css
+  Styles of the Dashboard page only (shared styles are in main.css).
+*/
+
+/* ---------- Top bar ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between; /* logo left, button right */
+  align-items: center;
+  height: var(--header-height);
+  padding: 0 var(--space-8);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Smaller "Log out" button inside the top bar */
+.site-header .btn {
+  height: 38px;
+  padding: 0 var(--space-5);
+}
+
+/* ---------- Page content ---------- */
+/* Centered container with a maximum width */
+.dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-8);
+}
+
+/* "Welcome, Sara Ahmed" */
+.welcome {
+  margin-bottom: var(--space-7);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* Two columns: fixed-width profile (left), courses take the rest (right) */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: var(--profile-col-width) 1fr;
+  gap: var(--space-7);
+  align-items: start; /* each card has its own height */
+}
+
+/* ---------- Profile card ---------- */
+.profile-list > div {
+  margin-bottom: var(--space-5);
+}
+
+/* The small gray label (Name / Email / Student ID) */
+.profile-list dt {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* The value under the label */
+.profile-list dd {
+  font-weight: var(--font-weight-semibold);
+  word-break: break-word; /* long emails don't overflow the card */
+}
+
+/* "Save changes" and "Cancel" side by side */
+.form-actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* ---------- Courses: table (desktop) ---------- */
+.courses-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.courses-table th,
+.courses-table td {
+  padding: var(--space-4) var(--space-3);
+  text-align: left;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+/* Table header cells */
+.courses-table th {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+/* No line under the last row */
+.courses-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- Courses: cards (mobile) ---------- */
+/* Hidden on desktop; the media query below shows them on small screens */
+.courses-cards {
+  display: none;
+}
+
+.course-card {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.course-card:last-child {
+  border-bottom: none;
+}
+
+/* Course name on the left, score on the right */
+.course-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Teacher name */
+.course-card p {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Mobile / tablet (screen narrower than 800px) ---------- */
+@media (max-width: 800px) {
+  .site-header {
+    padding: 0 var(--space-5);
+  }
+
+  .dashboard {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .welcome {
+    font-size: var(--font-size-xl);
+  }
+
+  /* Stack the profile and courses in one column */
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Swap the table for the cards */
+  .courses-table {
+    display: none;
+  }
+
+  .courses-cards {
+    display: block;
+  }
+}

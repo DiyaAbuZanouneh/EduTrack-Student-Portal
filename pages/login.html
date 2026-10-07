@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the page responsive on phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in - EduTrack</title>
+
+    <!-- CSS: main.css = shared styles, login.css = styles of this page -->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
+    <!-- The white card in the middle of the page -->
+    <main class="auth-card">
+      <h4 class="logo">EduTrack</h4>
+      <h1 class="title">Log in</h1>
+
+      <!-- General error box (e.g. wrong email or password). Hidden until JS shows it -->
+      <p id="form-error" class="form-error" role="alert" hidden></p>
+
+      <!-- novalidate: we do the validation ourselves in JS instead of the browser popups -->
+      <form id="login-form" novalidate>
+        <!-- Email field. Each .field = label + input + a place for its error message -->
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+          />
+          <p class="field-error"></p>
+        </div>
+
+        <!-- Password field with the Show/Hide button (handled by initPasswordToggles) -->
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              autocomplete="current-password"
+            />
+            <button type="button" class="toggle-password">Show</button>
+          </div>
+          <p class="field-error"></p>
+        </div>
+
+        <!-- Remember me: checked = localStorage, unchecked = sessionStorage -->
+        <label class="checkbox">
+          <input type="checkbox" name="remember" />
+          <span>Remember me</span>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      </form>
+
+      <!-- Link to the registration page -->
+      <p class="auth-switch">
+        Don't have an account? <a href="register.html">Register</a>
+      </p>
+    </main>
+
+    <!-- type="module" is required because login.js uses import/export -->
+    <script type="module" src="../js/login.js"></script>
+  </body>
+</html>
