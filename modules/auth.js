@@ -68,7 +68,7 @@ export function requireAuth() {
 
 // Login/Register: logged-in users go to the dashboard
 export function redirectIfLoggedIn() {
-  if (getSession()) location.replace("dashborad.html");
+  if (getSession()) location.replace("dashboard.html");
 }
 
 /* ---------- Auto-logout ---------- */
