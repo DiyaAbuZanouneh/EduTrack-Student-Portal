@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "fullName": "Sara Ahmed",
+      "email": "sara.ahmed@example.com",
+      "studentId": "STU-1024",
+      "password": "Sara@1234"
+    },
+    {
+      "id": "2",
+      "fullName": "Ahmad Khalil",
+      "email": "ahmad.khalil@example.com",
+      "studentId": "STU-1025",
+      "password": "Ahmad@1234"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "name": "Web Development Fundamentals",
+      "teacher": "Dr. Omar Khaled"
+    },
+    { "id": "2", "name": "Database Systems", "teacher": "Dr. Lina Mansour" },
+    { "id": "3", "name": "Data Structures", "teacher": "Eng. Youssef Ali" },
+    { "id": "4", "name": "UI/UX Design", "teacher": "Eng. Mona Hassan" }
+  ],
+  "enrollments": [
+    { "id": "1", "userId": "1", "courseId": "1", "score": 92 },
+    { "id": "2", "userId": "1", "courseId": "2", "score": 85 },
+    { "id": "3", "userId": "1", "courseId": "3", "score": 78 },
+    { "id": "4", "userId": "1", "courseId": "4", "score": 88 },
+    { "id": "5", "userId": "2", "courseId": "1", "score": 74 },
+    { "id": "6", "userId": "2", "courseId": "3", "score": 81 }
+  ]
+}
