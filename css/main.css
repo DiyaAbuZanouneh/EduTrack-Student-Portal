@@ -1,0 +1,80 @@
+/* Global Settings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables */
+:root {
+  /* Colors — brand */
+  --color-primary: oklch(0.5 0.14 255);
+  --color-primary-hover: oklch(0.42 0.14 255);
+  --color-primary-ring: oklch(0.5 0.14 255 / 0.15);
+
+  /* Colors — neutrals */
+  --color-bg: #f4f5f6;
+  --color-surface: #ffffff;
+  --color-text: #1b1d21;
+  --color-text-secondary: #3d424a;
+  --color-text-muted: #5b616b;
+  --color-placeholder: #8a9099;
+  --color-border: #e1e3e6;
+  --color-border-input: #d5d8dc;
+  --color-border-checkbox: #b9bdc4;
+  --color-divider: #eef0f2;
+
+  /* Colors — error */
+  --color-error: oklch(0.53 0.18 25);
+  --color-error-text: oklch(0.5 0.18 25);
+  --color-error-bg: oklch(0.96 0.025 25);
+  --color-error-border: oklch(0.85 0.07 25);
+  --color-error-strong: oklch(0.42 0.16 25);
+
+  /* Typography */
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-size-xs: 12.5px; /* field errors, small labels */
+  --font-size-sm: 13px; /* input labels, table head */
+  --font-size-md: 14px; /* links, secondary buttons */
+  --font-size-base: 15px; /* body, inputs, table cells */
+  --font-size-lg: 17px; /* card titles */
+  --font-size-xl: 26px; /* auth page title */
+  --font-size-2xl: 32px; /* dashboard welcome */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --letter-spacing-tight: -0.02em;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 10px;
+  --space-4: 14px;
+  --space-5: 16px;
+  --space-6: 22px;
+  --space-7: 28px;
+  --space-8: 36px;
+  --space-9: 40px;
+
+  /* Radius */
+  --radius-sm: 4px; /* checkbox */
+  --radius-md: 6px; /* inputs, buttons */
+  --radius-lg: 12px; /* cards */
+
+  /* Sizes */
+  --input-height: 44px;
+  --button-height: 46px;
+  --header-height: 64px;
+  --auth-card-width: 420px;
+  --profile-col-width: 360px;
+
+  /* Focus */
+  --focus-ring: 0 0 0 3px var(--color-primary-ring);
+}
+
+body {
+    background-color: var(--color-bg);
+    font-family:'Courier New', Courier, monospace;
+    line-height: 1.6;
+    color: var(--color-primary);
+}
